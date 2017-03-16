@@ -190,13 +190,6 @@ $(document).ready(function() {
         $('.user_img').attr('src', 'img/icon/user2.png');
     });
 
-    // function stopPropagation(e) {
-    //     if (e.stopPropagation)
-    //         e.stopPropagation();
-    //     else
-    //         e.cancelBubble = true;
-    // }
-
     $(document).ready(function() {
         $(".user_img").click(function(e) {
             $(".login").show();
