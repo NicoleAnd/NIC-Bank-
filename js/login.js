@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 $(document).ready(function() {
     var $cont = $('.cont');
@@ -190,22 +190,19 @@ $(document).ready(function() {
         $('.user_img').attr('src', 'img/icon/user2.png');
     });
 
-    $(document).ready(function() {
-        $(".user_img").click(function(e) {
+    $(function() {
+        $(document).not($(".login_input")).click(function() {
+            $(".login").hide(200);
+        });
+        $(".userlogin").click(function(e) {
             $(".login").show();
             $(".login").addClass('animated bounceInDown');
             e.stopPropagation();
-            $(".login").click(function(e) {
-                $(".login").show();
+            $(".login_input").click(function(e) {
+                $(".login_input").show();
                 e.stopPropagation();
             });
-        });
-
-        $(document.body).click(function() {
-            $(".login").hide();
-            $(".login").removeClass('animated bounceInDown');
-            $(".login").addClass('animated bounceOutDown');
-        });
-    });
+        })
+    })
 
 })
