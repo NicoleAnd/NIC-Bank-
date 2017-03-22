@@ -1,45 +1,68 @@
 $(document).ready(function() {
-    $('.left-nav-bar ul li:nth-child(2)').hover(function() {
-        $('.left-nav-bar ul li:nth-child(2) img:first-child').attr("src", "img/icon/onlineTransactionB.png");
-        $('.left-nav-bar ul li:nth-child(2) img:last-child').attr("src", "img/icon/arrowB.png");
+    var srcFirstList = [
+        'img/icon/onlineTransactionB.png',
+        'img/icon/platformParametersB.png',
+        'img/icon/equipmentParametersB.png',
+        'img/icon/trasiMonitorB.png',
+        'img/icon/reportB.png',
+        'img/icon/onlineTransaction.png',
+        'img/icon/platformParameters.png',
+        'img/icon/equipmentParameters.png',
+        'img/icon/trasiMonitor.png',
+        'img/icon/report.png',
+        'img/icon/arrow.png',
+        'img/icon/arrowB.png',
+
+    ];
+    $(".left-nav-bar ul li.first-menu").hover(function() {
+        // 一级菜单li第几个
+        var firstLiIndex = $(this).index() - 1;
+        // console.log(firstLiIndex);
+        var domFLiList = $(".first-menu").eq(firstLiIndex);
+        var domFImgList = $(".fm").eq(firstLiIndex);
+        var domLImgList = $(".arrow").eq(firstLiIndex);
+        // firstLiIndex*2+1
+        $(domFImgList).attr("src", srcFirstList[firstLiIndex]);
+        $(domLImgList).attr("src", srcFirstList[11]);
+        $(domFLiList).css('border-left', '0.2rem solid #68b0ff');
     }, function() {
-        $('.left-nav-bar ul li:nth-child(2) img:first-child').attr("src", "img/icon/onlineTransaction.png");
-        $('.left-nav-bar ul li:nth-child(2) img:last-child').attr("src", "img/icon/arrow.png");
-    });
-    $('.left-nav-bar ul li:nth-child(3)').hover(function() {
-        $('.left-nav-bar ul li:nth-child(3) img:first-child').attr("src", "img/icon/platformParametersB.png");
-        $('.left-nav-bar ul li:nth-child(3) img:last-child').attr("src", "img/icon/arrowB.png");
-    }, function() {
-        $('.left-nav-bar ul li:nth-child(3) img:first-child').attr("src", "img/icon/platformParameters.png");
-        $('.left-nav-bar ul li:nth-child(3) img:last-child').attr("src", "img/icon/arrow.png");
-    });
-    $('.left-nav-bar ul li:nth-child(4)').hover(function() {
-        $('.left-nav-bar ul li:nth-child(4) img:first-child').attr("src", "img/icon/equipmentParametersB.png");
-        $('.left-nav-bar ul li:nth-child(4) img:last-child').attr("src", "img/icon/arrowB.png");
-    }, function() {
-        $('.left-nav-bar ul li:nth-child(4) img:first-child').attr("src", "img/icon/equipmentParameters.png");
-        $('.left-nav-bar ul li:nth-child(4) img:last-child').attr("src", "img/icon/arrow.png");
-    });
-    $('.left-nav-bar ul li:nth-child(5)').hover(function() {
-        $('.left-nav-bar ul li:nth-child(5) img:first-child').attr("src", "img/icon/trasiMonitorB.png");
-        $('.left-nav-bar ul li:nth-child(5) img:last-child').attr("src", "img/icon/arrowB.png");
-    }, function() {
-        $('.left-nav-bar ul li:nth-child(5) img:first-child').attr("src", "img/icon/trasiMonitor.png");
-        $('.left-nav-bar ul li:nth-child(5) img:last-child').attr("src", "img/icon/arrow.png");
-    });
-    $('.left-nav-bar ul li:nth-child(6)').hover(function() {
-        $('.left-nav-bar ul li:nth-child(6) img:first-child').attr("src", "img/icon/reportB.png");
-        $('.left-nav-bar ul li:nth-child(6) img:last-child').attr("src", "img/icon/arrowB.png");
-    }, function() {
-        $('.left-nav-bar ul li:nth-child(6) img:first-child').attr("src", "img/icon/report.png");
-        $('.left-nav-bar ul li:nth-child(6) img:last-child').attr("src", "img/icon/arrow.png");
+        // 一级菜单li第几个
+        var firstLiIndex = $(this).index() - 1;
+        // console.log(firstLiIndex);
+        var domFLiList = $(".first-menu").eq(firstLiIndex);
+        var domFImgList = $(".fm").eq(firstLiIndex);
+        var domLImgList = $(".arrow").eq(firstLiIndex);
+        // firstLiIndex*2+1
+        $(domFImgList).attr("src", srcFirstList[firstLiIndex + 5]);
+        $(domLImgList).attr("src", srcFirstList[10]);
+        $(domFLiList).css('border-left', '0.2rem solid #68b0ff');
     });
 
-    $('.second-menus li.second-menu').hover(function(){
-        $(this).css('background-color','#68b0ff');
-        $(this).css('border-radius','2rem');
-
-    },function(){
-        $(this).css('background-color','#222');
+    // 二级菜单
+    $('.second-menus li.second-menu').hover(function() {
+        $(this).css({
+            'background-color': '#68b0ff',
+            'border-top-left-radius': '2rem',
+            'border-bottom-left-radius': '2rem',
+            'transition': '1s'
+        });
+    }, function() {
+        $(this).css({ 'background-color': '#222', 'transition': '0.5s' });
+    });
+    $('.second-menus li.second-menu').click(function() {
+        $(this).css({
+            'background-color': '#fff',
+            'border-top-left-radius': '2rem',
+            'border-bottom-left-radius': '2rem'
+        });
+        $('.second-menus li.second-menu a').css({ 'color': '#68b0ff', });
+    });
+    $('.second-menus li.second-menu').mouseleave(function() {
+        $(this).css({
+            'background-color': '#fff',
+            'border-top-left-radius': '2rem',
+            'border-bottom-left-radius': '2rem'
+        });
+        $('.second-menus li.second-menu a').css({ 'color': '#68b0ff', 'backgound-color': '#fff' });
     });
 });
