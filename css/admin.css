@@ -1,9 +1,11 @@
 /*顶部导航*/
-
+.top-nav{
+    line-height: 5rem
+}
 .nav-logo {
     width: 5rem;
     height: auto;
-    margin-top: 0.5rem;
+    margin-top: -0.5rem;
 }
 
 .welcome {
@@ -43,7 +45,7 @@
     .nav-logo {
         width: 3rem;
         height: auto;
-        margin-top: 0.5rem;
+        margin-top: -0.5rem;
     }
     .welcome {
         float: left;
@@ -84,7 +86,7 @@
     .nav-logo {
         width: 5rem;
         height: auto;
-        margin-top: 0.5rem;
+        margin-top: -0.5rem;
     }
     .welcome {
         float: left;

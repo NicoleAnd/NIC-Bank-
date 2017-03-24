@@ -12,57 +12,71 @@ $(document).ready(function() {
         'img/icon/report.png',
         'img/icon/arrow.png',
         'img/icon/arrowB.png',
-
     ];
-    $(".left-nav-bar ul li.first-menu").hover(function() {
+    $(".first-menu").each(function(index) {
+        $(this).click(function() {
+            $(".first-menu").children("a").removeClass("selectednav");
+            $(".first-menu").children("a").eq(index).addClass("selectednav");
+
+
+            // if ($(".first-menu").eq(index).children("ul").css("display") == "none") {
+            //     $(".first-menu").children("ul").hide().fadeOut(1000);
+            //     $(".first-menu").eq(index).children("ul").show().fadeIn(1000);
+            // } else {
+            //     $(".first-menu").eq(index).children("ul").hide().fadeOut(1000);
+            // }
+
+            // $(".first-menu").eq(index).children("ul").toggle(function() {
+                // $(".first-menu").eq(index).children("ul").removeClass("show").addClass("second-menus");
+                 $(".first-menu").eq(index).children("ul").removeClass("second-menus").addClass("show");
+            // }, function() {
+            //     $(".first-menu").eq(index).children("ul").removeClass("second-menus").addClass("show");
+            // });
+            
+
+        });
+    });
+
+
+
+    $(".first-menu").mouseover(function() {
         // 一级菜单li第几个
         var firstLiIndex = $(this).index() - 1;
         // console.log(firstLiIndex);
-        var domFLiList = $(".first-menu").eq(firstLiIndex);
+        var domFLiList = $(this).eq(firstLiIndex);
         var domFImgList = $(".fm").eq(firstLiIndex);
         var domLImgList = $(".arrow").eq(firstLiIndex);
-        // firstLiIndex*2+1
         $(domFImgList).attr("src", srcFirstList[firstLiIndex]);
         $(domLImgList).attr("src", srcFirstList[11]);
-        $(domFLiList).css('border-left', '0.2rem solid #68b0ff');
-    }, function() {
+
+        // }, function() {
         // 一级菜单li第几个
+        // var firstLiIndex = $(this).index() - 1;
+        // // console.log(firstLiIndex);
+        // var domFLiList = $(".first-menu").eq(firstLiIndex);
+        // var domFImgList = $(".fm").eq(firstLiIndex);
+        // var domLImgList = $(".arrow").eq(firstLiIndex);
+        // $(domFImgList).attr("src", srcFirstList[firstLiIndex + 5]);
+        // $(domLImgList).attr("src", srcFirstList[10]);
+
+    });
+    $(".first-menu").mouseout(function() {
         var firstLiIndex = $(this).index() - 1;
         // console.log(firstLiIndex);
         var domFLiList = $(".first-menu").eq(firstLiIndex);
         var domFImgList = $(".fm").eq(firstLiIndex);
         var domLImgList = $(".arrow").eq(firstLiIndex);
-        // firstLiIndex*2+1
         $(domFImgList).attr("src", srcFirstList[firstLiIndex + 5]);
         $(domLImgList).attr("src", srcFirstList[10]);
-        $(domFLiList).css('border-left', '0.2rem solid #68b0ff');
     });
 
+
+
     // 二级菜单
-    $('.second-menus li.second-menu').hover(function() {
-        $(this).css({
-            'background-color': '#68b0ff',
-            'border-top-left-radius': '2rem',
-            'border-bottom-left-radius': '2rem',
-            'transition': '1s'
-        });
-    }, function() {
-        $(this).css({ 'background-color': '#222', 'transition': '0.5s' });
+    $(".second-menu").click(function() {
+        $(this).parents().siblings("a").css('color', '#68b0ff');
+        // $(this).parents().siblings("a").addClass("selectednav");
     });
-    $('.second-menus li.second-menu').click(function() {
-        $(this).css({
-            'background-color': '#fff',
-            'border-top-left-radius': '2rem',
-            'border-bottom-left-radius': '2rem'
-        });
-        $('.second-menus li.second-menu a').css({ 'color': '#68b0ff', });
-    });
-    $('.second-menus li.second-menu').mouseleave(function() {
-        $(this).css({
-            'background-color': '#fff',
-            'border-top-left-radius': '2rem',
-            'border-bottom-left-radius': '2rem'
-        });
-        $('.second-menus li.second-menu a').css({ 'color': '#68b0ff', 'backgound-color': '#fff' });
-    });
+
+
 });

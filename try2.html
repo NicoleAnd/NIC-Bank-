@@ -1,0 +1,35 @@
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <title>无标题</title>
+        <style type="text/css">
+            ul li{
+                background: grey;
+                margin-bottom: 1px;
+                list-style: none;
+            }
+        </style>
+        <script type="text/javascript">
+            function change(obj){
+                var arr = document.getElementById("ul").getElementsByTagName("li");
+                for (var i = 0; i < arr.length; i++) {
+                    var a = arr[i];
+                    a.style.background = "grey";
+                };
+                obj.style.background = "red";
+            }
+        </script>
+    </head>
+    <body>
+        <ul id="ul">
+            <li onclick="change(this);">1</li>
+            <li onclick="change(this);">1</li>
+            <li onclick="change(this);">1</li>
+            <li onclick="change(this);">1</li>
+            <li onclick="change(this);">1</li>
+            <li onclick="change(this);">1</li>
+            <li onclick="change(this);">1</li>
+            <li onclick="change(this);">1</li>
+        </ul>
+    </body>
+</html>

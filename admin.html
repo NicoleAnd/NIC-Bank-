@@ -15,22 +15,40 @@
     <link type='text/css' href="css/font-face.css"> 
     <link rel="stylesheet" href="css/style.css"> -->
     <style>
+    /* body{
+        overflow-y: hidden;
+    }*/
     /*左边导航*/
     
     .left-nav-bar {
-        padding: 1rem 0 0 0;
+        padding: 1px 0 0 0;
+        color: #fff;
     }
-    
+    /*.nav-pills>li.hover>a {
+        background-color: #fff;
+    }
     .nav-pills>li.active>a {
         background-color: #68b0ff;
+    }
+    .nav-pills>li.focus>a {
+        background-color: #68b0ff;
+    }*/
+    
+    .nav-pills>li>a {
+        border-radius: 0;
     }
     
     .left-nav-bar ul li a {
         font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
         color: #fff;
-        font-size: 1.5rem;
+        /*font-size: 1.5rem;*/
     }
-    
+    .left-nav-bar ul li.first-menu a {
+        font-size: 1.8rem;
+    }
+    .left-nav-bar ul li.second-menu a {
+        font-size: 1.4rem;
+    }
     .left-nav-bar ul li a img {
         width: 1.5rem;
         margin-right: 0.5rem;
@@ -46,10 +64,27 @@
     .left-nav-bar ul li a:hover {
         color: #68b0ff;
         font-weight: bold;
+        background-color: #fff;
     }
     
-    .nav-pills>li>a {
-        border-radius: 0;
+    .first-menu:hover {
+        border-left: 0.2rem solid #68b0ff;
+    }
+    
+    .first-menu>a:active {
+        color: #68b0ff;
+    }
+    
+    .first-menu>a:focus {
+        color: #68b0ff;
+    }
+    
+    .second-menu a:active {
+        color: #68b0ff;
+    }
+    
+    .second-menu a:focus {
+        color: #68b0ff;
     }
     
     .navbar-inverse {
@@ -61,27 +96,51 @@
         height: auto;
         float: right;
     }
-    
-    .second-menus {
-        /*display: none;*/
+     .second-menus {
+        display: none;
     }
     
-    .second-menus li.second-menu a {
+    .second-menu:hover {
+        background-color: #68b0ff;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        transition: 1s;
+        color: #68b0ff;
+    }
+    
+    .second-menu:active {
+        background-color: #fff;
+        transition: 1s;
+    }
+    
+    .second-menu:focus {
+        background-color: #fff;
+        color: #68b0ff;
+        transition: 1s;
+    }
+    
+    .second-menu a {
         font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
         font-size: 0.5rem;
         color: #fff;
         margin: 0.5rem 0 0 3rem;
     }
-    
-    .second-menus li.second-menu a:hover {
+    /*.second-menu a:hover {
         text-decoration: none;
-        /*background-color: #eee;*/
+        background-color: #eee;
         background-color: #fff;
     }
+    */
     
     .show {
         display: block;
     }
+    
+    .selectednav {
+        color: #68b0ff;
+        background-color: #fff;
+    }
+
     </style>
 </head>
 
@@ -122,32 +181,68 @@
                         <a href="#"><img class="fm" src="img/icon/platformParameters.png">平台参数管理
                             <img class="arrow" src="img/icon/arrow.png">
                         </a>
+                        <ul class="nav second-menus">
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                        </ul>
                     </li>
                     <li class="first-menu">
                         <a href="#"><img class="fm" src="img/icon/equipmentParameters.png">设备参数管理
                             <img class="arrow" src="img/icon/arrow.png">
                         </a>
+                        <ul class="nav second-menus">
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                        </ul>
                     </li>
                     <li class="first-menu">
                         <a href="#"><img class="fm" src="img/icon/trasiMonitor.png">交易监控
                             <img class="arrow" src="img/icon/arrow.png">
                         </a>
+                        <ul class="nav second-menus">
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                        </ul>
                     </li>
                     <li class="first-menu">
                         <a href="#"><img class="fm" src="img/icon/report.png">报表统计
                             <img class="arrow" src="img/icon/arrow.png">
                         </a>
+                        <ul class="nav second-menus">
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                            <li class="second-menu"><a href="#">在线交易管理</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
-            <div class="col-xs-0 col-md-10 .col-lg-10 content">NIC管理系统</div>
+            <div class="col-xs-0 col-md-10 .col-lg-10 content welcomBg">NIC管理系统</div>
         </div>
     </div>
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/admin.js"></script>
     <script>
-
+    $(document).ready(function() {
+        //  TODO高度的获取定位
+        var winHeight = $(window).height();
+        // var bodyHeight = $(document.body).height();
+        var navbarHeight = $(".navbar").outerHeight(true);
+        // var contentHeight = bodyHeight + navbarHeight;
+        $(".welcomBg").height(winHeight - navbarHeight + 'px').css({
+            'background': 'url(img/welcomeBg1.png) no-repeat',
+            'background-size': 'cover',
+            // 'margin-top':'1rem'
+        });
+        $(".left-nav-bar").height(winHeight - navbarHeight + 'px').css('background-color', '#222');
+    })
     </script>
 </body>
 
