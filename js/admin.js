@@ -13,34 +13,58 @@ $(document).ready(function() {
         'img/icon/arrow.png',
         'img/icon/arrowB.png',
     ];
+    var count = 0;
     $(".first-menu").each(function(index) {
-        $(this).click(function() {
-            $(".first-menu").children("a").removeClass("selectednav");
-            $(".first-menu").children("a").eq(index).addClass("selectednav");
+
+        $(".first-menu > a").click(function() {
+
+            var firstLiIndex = $(this).parents().index() - 1;
+            count = firstLiIndex;
+
+            // $(".first-menu > a").mousedown(function () {
+            //     $(this).css("background", "#fff");
+            // })
+            //     .mouseup(function () {
+            //         $(this).css("background", "#222");
+            //     })
+
+            $(this).next("ul").toggle().closest("li").siblings("li").children("ul").hide();
 
 
-            // if ($(".first-menu").eq(index).children("ul").css("display") == "none") {
-            //     $(".first-menu").children("ul").hide().fadeOut(1000);
-            //     $(".first-menu").eq(index).children("ul").show().fadeIn(1000);
-            // } else {
-            //     $(".first-menu").eq(index).children("ul").hide().fadeOut(1000);
-            // }
+            $(".second-menu a").each(function(index) {
+                $(this).click(function() {
+                    $(".second-menu").parents().siblings("a").css({ 'backgroud': '#fff' });
 
-            // $(".first-menu").eq(index).children("ul").toggle(function() {
-                // $(".first-menu").eq(index).children("ul").removeClass("show").addClass("second-menus");
-                 $(".first-menu").eq(index).children("ul").removeClass("second-menus").addClass("show");
-            // }, function() {
-            //     $(".first-menu").eq(index).children("ul").removeClass("second-menus").addClass("show");
-            // });
-            
+                });
 
-        });
+                $(this).hover(function() {
+                    $(".second-menu").eq(index).parents().siblings("a").css({ 'color': '#68b0ff', 'background': '#fff' });
+
+                });
+            });
+
+            // 点击样式
+            $(".first-menu").css({ 'backgroud': '#222' });
+
+
+        }).next("ul").hide();
+
+        // if (!$(".second-menus").is(":hidden")) {
+        //     $(".first-menu").hover(function() {
+        //     var firstLiIndex = $(this).index() - 1;
+        //     // console.log(firstLiIndex);
+        //     var domFLiList = $(this).eq(firstLiIndex);
+        //     var domFImgList = $(".fm").eq(firstLiIndex);
+        //     var domLImgList = $(".arrow").eq(firstLiIndex);
+        //     $(domFImgList).attr("src", srcFirstList[firstLiIndex]);
+        //     $(domLImgList).attr("src", srcFirstList[11]);
+        // });
+        // }
+
+
+
     });
-
-
-
-    $(".first-menu").mouseover(function() {
-        // 一级菜单li第几个
+    $(".first-menu").hover(function() {
         var firstLiIndex = $(this).index() - 1;
         // console.log(firstLiIndex);
         var domFLiList = $(this).eq(firstLiIndex);
@@ -49,34 +73,17 @@ $(document).ready(function() {
         $(domFImgList).attr("src", srcFirstList[firstLiIndex]);
         $(domLImgList).attr("src", srcFirstList[11]);
 
-        // }, function() {
-        // 一级菜单li第几个
-        // var firstLiIndex = $(this).index() - 1;
-        // // console.log(firstLiIndex);
-        // var domFLiList = $(".first-menu").eq(firstLiIndex);
-        // var domFImgList = $(".fm").eq(firstLiIndex);
-        // var domLImgList = $(".arrow").eq(firstLiIndex);
-        // $(domFImgList).attr("src", srcFirstList[firstLiIndex + 5]);
-        // $(domLImgList).attr("src", srcFirstList[10]);
-
-    });
-    $(".first-menu").mouseout(function() {
+    }, function() {
         var firstLiIndex = $(this).index() - 1;
-        // console.log(firstLiIndex);
-        var domFLiList = $(".first-menu").eq(firstLiIndex);
-        var domFImgList = $(".fm").eq(firstLiIndex);
-        var domLImgList = $(".arrow").eq(firstLiIndex);
-        $(domFImgList).attr("src", srcFirstList[firstLiIndex + 5]);
-        $(domLImgList).attr("src", srcFirstList[10]);
+        if (count != firstLiIndex) {
+            // console.log(firstLiIndex);
+            var domFLiList = $(".first-menu").eq(firstLiIndex);
+            var domFImgList = $(".fm").eq(firstLiIndex);
+            var domLImgList = $(".arrow").eq(firstLiIndex);
+            $(domFImgList).attr("src", srcFirstList[firstLiIndex + 5]);
+            $(domLImgList).attr("src", srcFirstList[10]);
+
+        }
+
     });
-
-
-
-    // 二级菜单
-    $(".second-menu").click(function() {
-        $(this).parents().siblings("a").css('color', '#68b0ff');
-        // $(this).parents().siblings("a").addClass("selectednav");
-    });
-
-
 });

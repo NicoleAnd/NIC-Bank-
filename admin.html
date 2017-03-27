@@ -43,12 +43,15 @@
         color: #fff;
         /*font-size: 1.5rem;*/
     }
+    
     .left-nav-bar ul li.first-menu a {
         font-size: 1.8rem;
     }
+    
     .left-nav-bar ul li.second-menu a {
         font-size: 1.4rem;
     }
+    
     .left-nav-bar ul li a img {
         width: 1.5rem;
         margin-right: 0.5rem;
@@ -70,12 +73,11 @@
     .first-menu:hover {
         border-left: 0.2rem solid #68b0ff;
     }
-    
-    .first-menu>a:active {
-        color: #68b0ff;
+    /*.first-menu>a:active {
+        color: #fff;
     }
-    
-    .first-menu>a:focus {
+    */
+    /* .first-menu>a:focus {
         color: #68b0ff;
     }
     
@@ -85,7 +87,7 @@
     
     .second-menu a:focus {
         color: #68b0ff;
-    }
+    }*/
     
     .navbar-inverse {
         border: none;
@@ -95,9 +97,7 @@
         width: 1rem;
         height: auto;
         float: right;
-    }
-     .second-menus {
-        display: none;
+        margin-top: 0.5rem;
     }
     
     .second-menu:hover {
@@ -108,12 +108,12 @@
         color: #68b0ff;
     }
     
-    .second-menu:active {
-        background-color: #fff;
+    .second-menu a:active {
+        background-color: #68b0ff;
         transition: 1s;
     }
     
-    .second-menu:focus {
+    .second-menu a:focus {
         background-color: #fff;
         color: #68b0ff;
         transition: 1s;
@@ -132,15 +132,22 @@
     }
     */
     
+    .second-menus {
+        display: none;
+    }
+    
     .show {
         display: block;
     }
     
-    .selectednav {
+    .selectdnav {
         color: #68b0ff;
         background-color: #fff;
     }
-
+    
+    .selectednav-leave {
+        color: #fff;
+    }
     </style>
 </head>
 

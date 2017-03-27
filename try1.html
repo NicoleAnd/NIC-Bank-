@@ -1,65 +1,20 @@
-<!DOCTYPE HTML>
-<html>
-
-<head>
-    <meta charset="UTF-8" />
-    <title>demo</title>
-    <style type="text/css">
-        /*.selected{
-            background-color: green;
-            color: #fff;
-        }*/
+<style>
+        .actived {
+            background: red;
+        }
+ 
+        .noactive {
+            background:;
+        }
     </style>
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript">
-    $(function() {
-
-        $('ul li.fistList').click(function() {
-            var firstLiIndex = $(this).index() - 1;
-            var domFLiList = $(this).eq(firstLiIndex);
-            var first = $(this).eq(firstLiIndex).children('.first');
-            // $(this).css('background-color', 'red').siblings(domFLiList).css('background-color', '');
-            // $(first).attr("style", "background:#00CC00").siblings().removeAttr("style");
-            // $('ul li a.first:not(this)').removeClass('selected');
-            // $(this).addClass('selected');
-            $(".firstList").eq($(this).index()).attr("style", "background:#00CC00").siblings().removeAttr("style");
-            $('ul').show();
-
-        });
-    });
-    </script>
-</head>
-
-<body>
-    <ul>
-        <li class="fistList">
-            <a class="first" href="#">1</a>
-            <ul style="display:none">
-                <li><a href="#">111</a></li>
-                <li><a href="#">111</a></li>
-                <li><a href="#">111</a></li>
-                <li><a href="#">111</a></li>
-            </ul>
-        </li>
-        <li>
-            <a class="first" href="#">2</a>
-            <ul style="display:none">
-                <li><a href="#">222</a></li>
-                <li><a href="#">222</a></li>
-                <li><a href="#">222</a></li>
-                <li><a href="#">222</a></li>
-            </ul>
-        </li>
-        <li>
-            <a class="first" href="#">3</a>
-            <ul style="display:none">
-                <li><a href="#">333</a></li>
-                <li><a href="#">333</a></li>
-                <li><a href="#">333</a></li>
-                <li><a href="#">333</a></li>
-            </ul>
-        </li>
-    </ul>
-</body>
-
-</html>
+         <ul id="menu">
+            <li> <a href="#">Menu1</a></li>
+            <li> <a href="#">Menu2</a></li>
+            <li> <a href="#">Menu3</a></li>
+        </ul>
+        <script>
+            $('#menu li').click(function () {
+                var f = this;
+                $('#menu li').each(function () {  this.className = this == f ? 'actived' : 'noactive'   });
+            });
+        </script>
