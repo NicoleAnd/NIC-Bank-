@@ -1,0 +1,20 @@
+<style>
+        .actived {
+            background: red;
+        }
+ 
+        .noactive {
+            background:;
+        }
+    </style>
+         <ul id="menu">
+            <li> <a href="#">Menu1</a></li>
+            <li> <a href="#">Menu2</a></li>
+            <li> <a href="#">Menu3</a></li>
+        </ul>
+        <script>
+            $('#menu li').click(function () {
+                var f = this;
+                $('#menu li').each(function () {  this.className = this == f ? 'actived' : 'noactive'   });
+            });
+        </script>
