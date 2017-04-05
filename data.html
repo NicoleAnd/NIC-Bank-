@@ -28,10 +28,10 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#"><img class="nav-logo" src="img/icon/NIC-Logo1.png"></a>
+                <a class="navbar-brand" href="#"><span>NIC管理系统</span></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span>NIC管理系统</span></a></li>
                     <li>
                         <a href="login1.html"><img src="img/icon/log-out1.png"><span class="nav-word">退出</span></a>
                     </li>
@@ -175,6 +175,7 @@
                         </fieldset>
                     </form>
                     <table class="table table-bordered table-responsive table-striped table-content">
+                        <div class="placeholder"></div>
                         <thead>
                             <tr>
                                 <th>平台流水号</th>
@@ -347,14 +348,14 @@
             }, {
                 serialNum: '100100757575',
                 merchantNum: '335268415654456',
-                merchantName: '中国民生银行',
+                merchantName: '中国民生银行中国民生银行中国民生银行',
                 deviceNum: '20800069',
                 tradingTime: '2017-05-08 16:21:22',
-                serviceState: '成功',
+                serviceState: '正在处理，请联系管理员正在处理，请联系管理员',
                 messageType: '转账（收款）',
-                payeeName: '大宝',
-                payeeAccount: '652119******2598',
-                sum: '50000.00',
+                payeeName: '大宝大宝',
+                payeeAccount: '652119****2598',
+                sum: '50000000.00',
                 poundage: '20.00'
             }, {
                 serialNum: '100100757575',
@@ -396,6 +397,28 @@
             } else {
                 touchtime = new Date().getTime();
                 console.log("click")
+            }
+        });
+
+
+        $(window).scroll(function() {
+            var navbarHeight = $('nav').outerHeight(true);
+            var tableHeight = $('tbody tr th').outerHeight(true);
+            var tabletd = $("tbody tr:first td").length;
+            for (i = 0; i < tabletd; i++) {
+                $("thead tr:first th").eq(i).width($("tbody tr:first td").eq(i).width());
+            }
+            // var tableHeight = $('tbody tr td').outerHeight(true);
+            $offset = $('.placeholder').offset(); //不能用自身的div，不然滚动起来会很卡
+            var scrollTopH = $offset.top - navbarHeight;
+            if ($(window).scrollTop() > scrollTopH) {
+                $('thead').css({
+                    'position': 'fixed',
+                    'top': navbarHeight - 20,
+                    'z-index': '999'
+                });
+            } else {
+                $('thead').removeAttr('style');
             }
         });
     });

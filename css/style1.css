@@ -13,7 +13,12 @@ body {
 .nav-logo {
     width: 5rem;
     height: auto;
-    margin-top: -0.5rem;
+    margin-top: -1rem;
+}
+
+.navbar-header .navbar-brand {
+    color: #fff;
+    margin-top: 1rem;
 }
 
 .navbar-right a img {
@@ -245,9 +250,10 @@ h2.sub-header {
     margin-bottom: 8px;
 }
 
-.tradingDetails{
+.tradingDetails {
     margin-top: 4rem;
 }
+
 
 /*
 .navbar-add {
