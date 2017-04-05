@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Bank管理系统</title>
+    <link href="img/icon/NIC-Logo1.png" rel="shortcut icon" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/ie10-viewport-bug-workaround.css">
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.page.css">
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="js/ie-emulation-modes-warning.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-add navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img class="nav-logo" src="img/icon/NIC-Logo1.png"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span>NIC管理系统</span></a></li>
+                    <li>
+                        <a href="login1.html"><img src="img/icon/log-out1.png"><span class="nav-word">退出</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/icon/login-user.png"><span class="nav-word">Admin</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar" id="accordion" class="accordion">
+                    <li class="first-menu">
+                        <a class="link" href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp;首页<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="first-menu">
+                        <a class="link" href="#"><i class="fa fa-credit-card fa-fw" aria-hidden="true"></i>&nbsp;在线交易管理<i class="fa fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="#">在线交易管理</a></li>
+                            <li><a href="#">在线交易管理</a></li>
+                            <li><a href="#">在线交易管理</a></li>
+                            <li><a href="#">在线交易管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="first-menu ">
+                        <a class="link" href="#"><i class="fa fa-wrench fa-fw" aria-hidden="true"></i>&nbsp;平台参数管理<i class="fa fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="#">平台参数管理</a></li>
+                            <li><a href="#">平台参数管理</a></li>
+                            <li><a href="#">平台参数管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="first-menu">
+                        <a class="link" href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp;设备参数管理<i class="fa fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="#">设备参数管理</a></li>
+                            <li><a href="#">设备参数管理</a></li>
+                            <li><a href="#">设备参数管理</a></li>
+                            <li><a href="#">设备参数管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="first-menu">
+                        <a class="link" href="#"><i class="fa fa-globe fa-fw" aria-hidden="true"></i>&nbsp;交易监控<i class="fa fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                            <li><a href="#">交易监控</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <h5 class="sub-header">
+                    <a class="posit" href="#">在线交易管理</a>>><span>在线交易管理</span>>><span>详情</span>
+                </h5>
+                <div id="test" class="form-group tradingDetails">
+                    <form class="form-horizontal" role="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 control-label" for="tradingTime">交易时间</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="tradingTime" type="text" placeholder="000494" />
+                                </div>
+                                <label class="col-lg-2 col-md-2 control-label" for="serialNum">平台流水号</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="serialNum" type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 control-label" for="provincialArea">省级区域</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="provincialArea" type="text" placeholder="000494" />
+                                </div>
+                                <label class="col-lg-2 col-md-2 control-label" for="TerminalSerialNum">终端流水号</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="TerminalSerialNum" type="text" placeholder="000494" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 control-label" for="municipalArea">市级区域</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="municipalArea" type="text" placeholder="000494" />
+                                </div>
+                                <label class="col-lg-2 col-md-2 control-label" for="messageType">交易类型</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="messageType" type="text" placeholder="000494" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 control-label" for="headOffice">总行</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="municipalArea" type="text" placeholder="000494" />
+                                </div>
+                                <label class="col-lg-2 col-md-2 control-label" for="serviceState">状态</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="serviceState" type="text" placeholder="000494" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 control-label" for="branchOffice">分行</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="municipalArea" type="text" placeholder="000494" />
+                                </div>
+                                <label class="col-lg-2 col-md-2 control-label" for="messageType">付款账户</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="messageType" type="text" placeholder="000494" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 control-label" for="merchantNum">商户号</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="merchantNum" type="text" placeholder="000494" />
+                                </div>
+                                <label class="col-lg-2 col-md-2 control-label" for="payeeName">付款户名</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="payeeName" type="text" placeholder="000494" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 control-label" for="branchOffice">商户名</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="municipalArea" type="text" placeholder="000494" />
+                                </div>
+                                <label class="col-lg-2 col-md-2 control-label" for="messageType">收款账户</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="messageType" type="text" placeholder="000494" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 control-label" for="merchantNum">设备号网点</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="merchantNum" type="text" placeholder="000494" />
+                                </div>
+                                <label class="col-lg-2 col-md-2 control-label" for="payeeName">收款户名</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="payeeName" type="text" placeholder="000494" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 control-label" for="merchantNum">设备号</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="merchantNum" type="text" placeholder="000494" />
+                                </div>
+                                <label class="col-lg-2 col-md-2 control-label" for="sum">金额</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="sum" type="text" placeholder="000494" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 control-label" for="merchantNum">操作员号</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="merchantNum" type="text" placeholder="000494" />
+                                </div>
+                                <label class="col-lg-2 col-md-2 control-label" for="sum">批次号</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="sum" type="text" placeholder="000494" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 col-md-2 control-label" for="merchantNum">手续费</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="merchantNum" type="text" placeholder="000494" />
+                                </div>
+                                <label class="col-lg-2 col-md-2 control-label" for="sum">投保关系</label>
+                                <div class="col-lg-3 col-md-3">
+                                    <input class="form-control" id="sum" type="text" placeholder="000494" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-3 col-md-3 col-md-offset-7">
+                                    <button type="button" class="btn btn-info" style="float:right;" onClick="window.open('data.html','_self')">返回</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/leftnav.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/jquery.page.js"></script>
+    <script>
+    var vue = new Vue({
+        el: "#test",
+        data: {
+            item: {
+                serialNum: '',
+                merchantNum: '',
+                merchantName: '',
+                deviceNum: '',
+                tradingTime: '',
+                serviceState: '',
+                messageType: '',
+                payeeName: '',
+                payeeAccount: '',
+                sum: '',
+                poundage: '',
+                operation: ''
+            },
+            // checkedNames: [],
+            arrayData: [{
+                // id: '1',
+                serialNum: '100100757575',
+                merchantNum: '335268415654456',
+                merchantName: '中国民生银行',
+                deviceNum: '20800069',
+                tradingTime: '2017-05-08 16:21:22',
+                serviceState: '成功',
+                messageType: '转账（收款）',
+                payeeName: '大宝',
+                payeeAccount: '652119******2598',
+                sum: '50000.00',
+                poundage: '20.00'
+
+            }, {
+                serialNum: '100100757575',
+                merchantNum: '335268415654456',
+                merchantName: '中国民生银行',
+                deviceNum: '20800069',
+                tradingTime: '2017-05-08 16:21:22',
+                serviceState: '成功',
+                messageType: '转账（收款）',
+                payeeName: '大宝',
+                payeeAccount: '652119******2598',
+                sum: '50000.00',
+                poundage: '20.00'
+
+            }, {
+                serialNum: '100100757575',
+                merchantNum: '335268415654456',
+                merchantName: '中国民生银行',
+                deviceNum: '20800069',
+                tradingTime: '2017-05-08 16:21:22',
+                serviceState: '成功',
+                messageType: '转账（收款）',
+                payeeName: '大宝',
+                payeeAccount: '652119******2598',
+                sum: '50000.00',
+                poundage: '20.00'
+
+            }, {
+                serialNum: '100100757575',
+                merchantNum: '335268415654456',
+                merchantName: '中国民生银行',
+                deviceNum: '20800069',
+                tradingTime: '2017-05-08 16:21:22',
+                serviceState: '成功',
+                messageType: '转账（收款）',
+                payeeName: '大宝',
+                payeeAccount: '652119******2598',
+                sum: '50000.00',
+                poundage: '20.00'
+
+            }, {
+                serialNum: '100100757575',
+                merchantNum: '335268415654456',
+                merchantName: '中国民生银行',
+                deviceNum: '20800069',
+                tradingTime: '2017-05-08 16:21:22',
+                serviceState: '成功',
+                messageType: '转账（收款）',
+                payeeName: '大宝',
+                payeeAccount: '652119******2598',
+                sum: '50000.00',
+                poundage: '20.00'
+
+            }, {
+                serialNum: '100100757575',
+                merchantNum: '335268415654456',
+                merchantName: '中国民生银行',
+                deviceNum: '20800069',
+                tradingTime: '2017-05-08 16:21:22',
+                serviceState: '成功',
+                messageType: '转账（收款）',
+                payeeName: '大宝',
+                payeeAccount: '652119******2598',
+                sum: '50000.00',
+                poundage: '20.00'
+
+            }, {
+                serialNum: '100100757575',
+                merchantNum: '335268415654456',
+                merchantName: '中国民生银行',
+                deviceNum: '20800069',
+                tradingTime: '2017-05-08 16:21:22',
+                serviceState: '成功',
+                messageType: '转账（收款）',
+                payeeName: '大宝',
+                payeeAccount: '652119******2598',
+                sum: '50000.00',
+                poundage: '20.00'
+
+            }, {
+                serialNum: '100100757575',
+                merchantNum: '335268415654456',
+                merchantName: '中国民生银行',
+                deviceNum: '20800069',
+                tradingTime: '2017-05-08 16:21:22',
+                serviceState: '成功',
+                messageType: '转账（收款）',
+                payeeName: '大宝',
+                payeeAccount: '652119******2598',
+                sum: '50000.00',
+                poundage: '20.00'
+
+            }, {
+                serialNum: '100100757575',
+                merchantNum: '335268415654456',
+                merchantName: '中国民生银行',
+                deviceNum: '20800069',
+                tradingTime: '2017-05-08 16:21:22',
+                serviceState: '成功',
+                messageType: '转账（收款）',
+                payeeName: '大宝',
+                payeeAccount: '652119******2598',
+                sum: '50000.00',
+                poundage: '20.00'
+            }, {
+                serialNum: '100100757575',
+                merchantNum: '335268415654456',
+                merchantName: '中国民生银行',
+                deviceNum: '20800069',
+                tradingTime: '2017-05-08 16:21:22',
+                serviceState: '成功',
+                messageType: '转账（收款）',
+                payeeName: '大宝',
+                payeeAccount: '652119******2598',
+                sum: '50000.00',
+                poundage: '20.00'
+            }]
+        }
+    });
+    $(function() {
+        $("#page").Page({
+            totalPages: 9, //分页总数
+            liNums: 7, //分页的数字按钮数(建议取奇数)
+            activeClass: 'activP', //active 类样式定义
+            callBack: function(page) {
+                //console.log(page)
+            }
+        });
+    })
+    </script>
+</body>
+
+</html>
